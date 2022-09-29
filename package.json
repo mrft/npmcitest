@@ -17,8 +17,7 @@
     "lint": "eslint sri4node.ts ts test",
     "dev": "env $(cat .env) nodemon --debug --watch ./js js/server.ts"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@kathondvla/sri-client": "https://github.com/katholiek-onderwijs-vlaanderen/sri-client.git#sprint-220-0",
     "@types/chai": "^4.3.0",
@@ -38,8 +37,7 @@
     "type": "git",
     "url": "https://github.com/mrft/npmcitest.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "",
   "license": "LGPL-3.0",
   "bugs": {

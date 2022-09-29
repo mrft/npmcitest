@@ -7,13 +7,13 @@
     "/dist"
   ],
   "scripts": {
-    "prepare": "echo 'package.json:scripts.prepare' && npm run build",
-    "prebuild": "echo 'package.json:scripts.prebuild' && npm run clean",
-    "build": "echo 'package.json:scripts.build' && tsc --project .",
-    "postbuild": "echo 'package.json:scripts.postbuild' && cp -r ./js/docs ./dist/js",
-    "clean": "echo 'package.json:scripts.clean' && rm -rf ./dist",
-    "pretest": "echo 'package.json:scripts.pretest' && npm run clean && mkdir -p ./dist/js && npm run postbuild",
-    "test": "echo 'package.json:scripts.test' && ./node_modules/.bin/mocha --exit --require ts-node/register ./test/tests.ts",
+    "prepare": "echo '[npmcitest] package.json:scripts.prepare' && npm run build",
+    "prebuild": "echo '[npmcitest] package.json:scripts.prebuild' && npm run clean",
+    "build": "echo '[npmcitest] package.json:scripts.build' && tsc --project .",
+    "postbuild": "echo '[npmcitest] package.json:scripts.postbuild' && cp -r ./js/docs ./dist/js",
+    "clean": "echo '[npmcitest] package.json:scripts.clean' && rm -rf ./dist",
+    "pretest": "echo '[npmcitest] package.json:scripts.pretest' && npm run clean && mkdir -p ./dist/js && npm run postbuild",
+    "test": "echo '[npmcitest] package.json:scripts.test' && ./node_modules/.bin/mocha --exit --require ts-node/register ./test/tests.ts",
     "lint": "eslint sri4node.ts ts test",
     "dev": "env $(cat .env) nodemon --debug --watch ./js js/server.ts"
   },

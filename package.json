@@ -1,0 +1,49 @@
+{
+  "name": "sri4node",
+  "description": "An implementation of SRI (Standard ROA Interface) on Node.js.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "prepare": "echo 'package.json:scripts.prepare' && npm run build",
+    "prebuild": "echo 'package.json:scripts.prebuild' && npm run clean",
+    "build": "echo 'package.json:scripts.build' && tsc --project .",
+    "postbuild": "echo 'package.json:scripts.postbuild' && cp -r ./js/docs ./dist/js",
+    "clean": "echo 'package.json:scripts.clean' && rm -rf ./dist",
+    "pretest": "echo 'package.json:scripts.pretest' && npm run clean && mkdir -p ./dist/js && npm run postbuild",
+    "test": "echo 'package.json:scripts.test' && ./node_modules/.bin/mocha --exit --require ts-node/register ./test/tests.ts",
+    "lint": "eslint sri4node.ts ts test",
+    "dev": "env $(cat .env) nodemon --debug --watch ./js js/server.ts"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@kathondvla/sri-client": "https://github.com/katholiek-onderwijs-vlaanderen/sri-client.git#sprint-220-0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "chai": "^4.3.4",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "mocha": "^8.4.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrft/npmcitest.git"
+  },
+  "keywords": [
+  ],
+  "author": "",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mrft/npmcitest"
+  },
+  "homepage": "https://github.com/mrft/npmcitest"
+}

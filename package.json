@@ -7,7 +7,7 @@
     "/dist"
   ],
   "scripts": {
-    "prepare": "echo '[npmcitest] package.json:scripts.prepare' && npm run build",
+    "prepare": "echo '[npmcitest] package.json:scripts.prepare' && touch NOTICE && npm run build",
     "prebuild": "echo '[npmcitest] package.json:scripts.prebuild' && npm run clean",
     "build": "echo '[npmcitest] package.json:scripts.build' && tsc --project .",
     "postbuild": "echo '[npmcitest] package.json:scripts.postbuild' && cp -r ./js/docs ./dist/js",
